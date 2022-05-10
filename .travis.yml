@@ -1,0 +1,7 @@
+language: java
+
+before-install:
+    - cd Scrabble
+
+script:
+  - mvn clean install
