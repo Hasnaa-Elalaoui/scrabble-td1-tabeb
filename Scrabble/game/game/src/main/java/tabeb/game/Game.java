@@ -1,5 +1,8 @@
 package tabeb.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Game{
     // Max length 2 - Min length 0
     private int[] playersIdList;

@@ -19,12 +19,14 @@ public class GameApplication {
                 .web(WebApplicationType.NONE)
                 .run(args);
     }
+
     @Bean
     public CommandLineRunner execScript(@Autowired EncryptedMessageConsumer client) {
         return args -> {
             System.out.println("--- BEGIN CMD GAME ---");
             Game game = new Game();
-            System.out.println("Envois d'une requete sur localhost/8080/game/{id}");
+
+            System.out.println("Envoi d'une requete sur localhost/8080/game/{id}");
             String msg = client.getInscription(game.getId()).block();
             System.out.println(msg + " sur le thread : " + Thread.currentThread().getName());
         };

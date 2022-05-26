@@ -14,7 +14,7 @@ public class ServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServerApplication.class, args);
     }
-/*
+
     @GetMapping("/")
     public String home() {
         return "Hello World";
@@ -28,5 +28,5 @@ public class ServerApplication {
     @GetMapping(value = "/game/{id}")
     public String getGame(@PathVariable("id") String id) {
         return "Connection of the game room with id " + id ;
-    }*/
+    }
 }
