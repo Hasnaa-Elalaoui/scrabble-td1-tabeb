@@ -28,10 +28,10 @@ public class PlayerApplication {
             String msg = client.getHello().block();
             System.out.println(msg + " sur le thread : " + Thread.currentThread().getName());
 
-            System.out.println("Envois d'une requete sur localhost/8080/hello");
+            System.out.println("Envoi d'une requete sur localhost/8080/hello");
             requeteMonoGet(client);
 
-            System.out.println("Envois d'une requete sur localhost/8080/player/{id}");
+            System.out.println("Envoi d'une requete sur localhost/8080/player/{id}");
             requeteMonoGetSub(client, player);
         };
     }
@@ -40,7 +40,7 @@ public class PlayerApplication {
         reqHello.subscribe(new Consumer<String>() {
             @Override
             public void accept(String msg) {
-                System.out.println(" msg :  " + msg +"; thread : "+Thread.currentThread().getName());
+                System.out.println(" msg Hello :  " + msg +"; thread : "+Thread.currentThread().getName());
             }
         });
     }
@@ -50,7 +50,7 @@ public class PlayerApplication {
         reqSub.subscribe(new Consumer<String>() {
             @Override
             public void accept(String msg) {
-                System.out.println(" msg :  " + msg +"; thread : "+Thread.currentThread().getName());
+                System.out.println(" msg inscription :  " + msg +"; thread : "+Thread.currentThread().getName());
             }
         });
     }

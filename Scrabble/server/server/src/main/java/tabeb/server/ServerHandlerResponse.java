@@ -15,18 +15,18 @@ public class ServerHandlerResponse {
 
     public Mono<ServerResponse> hello(ServerRequest serverRequest) {
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(new Message("HelloWorld")));
+                .body(BodyInserters.fromValue(new Message("Server Handler Response : HelloWorld")));
     }
 
     public Mono<ServerResponse> playerIdentification(ServerRequest serverRequest) {
         int id = Integer.parseInt(serverRequest.pathVariable("id"));
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(new Message("Connection of the player with id " + id )));
+                .body(BodyInserters.fromValue(new Message("Server Handler Response : Connection of the player with id " + id )));
     }
 
     public Mono<ServerResponse> gameIndentification(ServerRequest serverRequest) {
         int id = Integer.parseInt(serverRequest.pathVariable("id"));
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(new Message("Connection of the game with id " + id)));
+                .body(BodyInserters.fromValue(new Message("Server Handler Response : Connection of the game with id " + id)));
     }
 }
