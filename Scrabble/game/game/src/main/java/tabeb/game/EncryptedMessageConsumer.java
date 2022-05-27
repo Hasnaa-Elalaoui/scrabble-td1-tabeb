@@ -20,6 +20,8 @@ public class EncryptedMessageConsumer {
         return this.client.get().uri("/game/" + id ).accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(Message.class)
-                .map(Message::getMsg);
+                .map(Message::getMsg)
+                // permet de continuer malgré une erreur, on affiche le contenu de l'erreur
+                .onErrorResume(e -> Mono.just("Encountered an exception : " + e));
     }
 }
