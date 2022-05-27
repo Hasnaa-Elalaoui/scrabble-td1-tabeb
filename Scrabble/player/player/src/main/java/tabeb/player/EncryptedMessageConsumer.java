@@ -25,12 +25,11 @@ public class EncryptedMessageConsumer {
     }
 
     public Mono<String> getHello() {
-        return this.client.get().uri("/hello").accept(MediaType.APPLICATION_JSON)
+        return this.client.get().uri("/").accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(Message.class)
                 .map(Message::getMsg)
                 .onErrorResume(e -> Mono.just("Encountered an exception : " + e));
-
     }
 
 

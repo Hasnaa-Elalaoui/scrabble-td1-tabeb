@@ -32,7 +32,6 @@ public class GameApplication {
         };
     }
 
-    /*
     private void requeteMonoGetSub(EncryptedMessageConsumer client, Game game) {
         Mono<String> reqSub = client.getInscription(game.getId());
         reqSub.subscribe(new Consumer<String>() {
@@ -41,5 +40,5 @@ public class GameApplication {
                 System.out.println(" msg :  " + msg +"; thread : "+Thread.currentThread().getName());
             }
         });
-    }*/
+    }
 }

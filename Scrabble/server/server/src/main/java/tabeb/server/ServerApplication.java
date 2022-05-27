@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tabeb.utils.Message;
 
 @SpringBootApplication
 @RestController
@@ -16,17 +17,17 @@ public class ServerApplication {
     }
     
     @GetMapping("/")
-    public String home() {
-        return "Hello World";
+    public Message home() {
+        return new Message("Server Application : Hello World");
     }
 
     @GetMapping(value = "/player/{id}")
-    public String getUser(@PathVariable("id") String id) {
-        return "Connection of the player with id " + id ;
+    public Message getUser(@PathVariable("id") String id) {
+        return new Message("Server Application : Connection of the player with id " + id);
     }
 
     @GetMapping(value = "/game/{id}")
-    public String getGame(@PathVariable("id") String id) {
-        return "Connection of the game room with id " + id ;
+    public Message getGame(@PathVariable("id") String id) {
+        return new Message("Server Application : Connection of the game room with id " + id);
     }
 }
