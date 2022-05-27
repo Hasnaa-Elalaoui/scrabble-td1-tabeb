@@ -5,3 +5,7 @@ before-install:
 
 script:
   - mvn clean install
+
+branches:
+  only:
+    - main

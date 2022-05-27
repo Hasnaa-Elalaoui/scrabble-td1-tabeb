@@ -12,3 +12,7 @@ L'intégration de tests unitaires, d'intégration et des technologies comme *Spr
 *Maven* ou encore *Docker* en demeure la tâche principale.
 
 Ce document sera modifié au fur et à mesure de l'avancement du projet.
+
+Afin de démarrer chaque service du projet, il faut se placer dans le dossier racine (contenant le pom.xml) et lancer la commande suivante :
+
+    mvn spring-boot:run
