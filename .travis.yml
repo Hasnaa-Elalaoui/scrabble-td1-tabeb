@@ -1,0 +1,11 @@
+language: java
+
+before-install:
+    - cd Scrabble
+
+script:
+  - mvn clean install
+
+branches:
+  only:
+    - main
