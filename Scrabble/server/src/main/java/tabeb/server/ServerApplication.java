@@ -15,7 +15,7 @@ public class ServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServerApplication.class, args);
     }
-    
+    /*
     @GetMapping("/")
     public Message home() {
         return new Message("Server Application : Hello World");
@@ -30,4 +30,5 @@ public class ServerApplication {
     public Message getGame(@PathVariable("id") String id) {
         return new Message("Server Application : Connection of the game room with id " + id);
     }
+     */
 }
